@@ -1,0 +1,10 @@
+stages:
+  - checkov_scan
+
+checkov_scan:
+  stage: checkov_scan
+  image: python:3.9
+  before_script:
+    - pip install checkov
+  script:
+    - checkov -d .
