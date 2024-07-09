@@ -1,0 +1,14 @@
+stages:
+  - checkov_scan
+
+checkov_scan:
+  stage: checkov_scan
+  image: python:3.9
+  before_script:
+    - pip install checkov
+  script:
+    - echo "Running Checkov to scan IaC for vulnerabilities..."
+    - checkov -d .
+  artifacts:
+    paths:
+      - results
