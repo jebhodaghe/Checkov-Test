@@ -7,8 +7,5 @@ checkov_scan:
   before_script:
     - pip install checkov
   script:
-    - echo "Running Checkov to scan IaC for vulnerabilities..."
     - checkov -d .
-  artifacts:
-    paths:
-      - results
+
